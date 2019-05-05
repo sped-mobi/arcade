@@ -1,0 +1,19 @@
+<Project>
+
+  <PropertyGroup>
+
+    <CopyVsixManifestToOutput>false</CopyVsixManifestToOutput>
+    
+    <!--<UseCommonOutputDirectory Condition="'$(UseCommonOutputDirectory)' == ''">true</UseCommonOutputDirectory>-->
+    <VSSDKTargetPlatformRegRootSuffix Condition="'$(RootSuffix)' != ''">$(RootSuffix)</VSSDKTargetPlatformRegRootSuffix>
+    <VSSDKTargetPlatformRegRootSuffix Condition="'$(VSSDKTargetPlatformRegRootSuffix)' == ''">Exp</VSSDKTargetPlatformRegRootSuffix>
+    
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <ForceGenerationOfBindingRedirects>true</ForceGenerationOfBindingRedirects>
+
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+
+  </PropertyGroup>
+
+
+</Project>

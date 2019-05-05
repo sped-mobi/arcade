@@ -1,0 +1,16 @@
+<Project>
+  <Import Project="Sdk.targets" Sdk="Microsoft.DotNet.Arcade.Sdk" />
+  <PropertyGroup>
+    <NoWarn>$(NoWarn);NU5125;NU5105;NU5104;NU5111;NU5110</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Remove="XliffTasks" />
+
+    <PackageReference Condition="'$(SkipImportVSSdkNuGetPackage)'!='true'" Include="Microsoft.VisualStudio.SDK" Version="16.0.200" />
+  </ItemGroup>
+
+  <Import Project="VisualStudio.targets" Condition="'$(ImportVSSDKTargets)'=='true'" />
+
+
+</Project>

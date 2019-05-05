@@ -1,0 +1,43 @@
+<Project>
+
+
+<Choose>
+  <When Condition="'$(IsVSPackageProject)' == 'true'">
+    <PropertyGroup>
+        <CreateVsixContainer>false</CreateVsixContainer>
+        <CopyVsixManifestToOutput>false</CopyVsixManifestToOutput>
+        <GeneratePkgDefFile>true</GeneratePkgDefFile>
+
+        <UseCodeBase>true</UseCodeBase>
+
+        <IncludeAssemblyInVSIXContainer>false</IncludeAssemblyInVSIXContainer>
+        <IncludeDebugSymbolsInVSIXContainer>false</IncludeDebugSymbolsInVSIXContainer>
+        <IncludeDebugSymbolsInLocalVSIXDeployment>false</IncludeDebugSymbolsInLocalVSIXDeployment>
+        <CopyBuildOutputToOutputDirectory>false</CopyBuildOutputToOutputDirectory>
+        <CopyOutputSymbolsToOutputDirectory>false</CopyOutputSymbolsToOutputDirectory>
+
+    </PropertyGroup>
+  </When>
+    <When Condition="'$(IsVSIXProject)' == 'true'">
+    <PropertyGroup>
+        <CreateVsixContainer>true</CreateVsixContainer>
+        <CopyVsixManifestToOutput>true</CopyVsixManifestToOutput>
+        <GeneratePkgDefFile>false</GeneratePkgDefFile>
+
+        <IncludeAssemblyInVSIXContainer>false</IncludeAssemblyInVSIXContainer>
+        <IncludeDebugSymbolsInVSIXContainer>true</IncludeDebugSymbolsInVSIXContainer>
+        <IncludeDebugSymbolsInLocalVSIXDeployment>true</IncludeDebugSymbolsInLocalVSIXDeployment>
+        <CopyBuildOutputToOutputDirectory>true</CopyBuildOutputToOutputDirectory>
+        <CopyOutputSymbolsToOutputDirectory>true</CopyOutputSymbolsToOutputDirectory>
+
+    </PropertyGroup>
+  </When>
+</Choose>
+
+  <Import Project="$(VsToolsPath)\VSSDK\Microsoft.VsSDK.targets"  />
+
+  <Target Condition="'$(CreateVsixContainer)'=='false'" Name="VSIXIdentifierProjectOutputGroup" />
+  <Target Condition="'$(CreateVsixContainer)'=='false'" Name="VSIXNameProjectOutputGroup" />
+
+
+</Project>

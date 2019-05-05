@@ -1,0 +1,46 @@
+<Project>
+  <PropertyGroup>
+    <DotNetBuildFromSource>true</DotNetBuildFromSource>
+    <DotNetFinalVersionKind>release</DotNetFinalVersionKind>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <GitHubOrganization>sped-mobi</GitHubOrganization>
+    <GitHubRepositoryBranch>master</GitHubRepositoryBranch>
+    <GitHubRepositoryName>{{repositoryName}}</GitHubRepositoryName>
+    <GitHubBaseRepositoryUrl>https://github.com/$(GitHubOrganization)/$(GitHubRepositoryName)</GitHubBaseRepositoryUrl>
+    <GitHubRepositoryUrl>$(GitHubBaseRepositoryUrl).git</GitHubRepositoryUrl>
+    <GitHubPackageProjectUrl>$(GitHubBaseRepositoryUrl)/tree/$(GitHubRepositoryBranch)</GitHubPackageProjectUrl>
+  </PropertyGroup>
+
+  <Import Project="Sdk.props" Sdk="Microsoft.DotNet.Arcade.Sdk" />
+  
+  <PropertyGroup>
+    <IsShipping>false</IsShipping>
+
+    <Authors>Brad Marshall</Authors> 
+    <Owners>$(Authors)</Owners>
+    <Company>$(Authors)</Company>
+    <Product>$(AssemblyName)</Product>
+    <Copyright>%A9 $([System.DateTime]::Now.Year) $(Company). All Rights Reserved.</Copyright>
+      
+    <RepositoryUrl>$(GitHubRepositoryUrl)</RepositoryUrl>
+    <PackageIconUrl>https://go.microsoft.com/fwlink/?LinkID=288859</PackageIconUrl>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <!--<PackageLicenseUrl>https://apache.org/licenses/#2.0</PackageLicenseUrl>-->
+    <PackageProjectUrl>$(GitHubPackageProjectUrl)</PackageProjectUrl>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    
+    <!--<DebugType>full</DebugType>-->
+    <DebugSymbols>true</DebugSymbols>
+    <LangVersion>latest</LangVersion>
+    
+  </PropertyGroup>
+
+  <Import Project="VisualStudio.props" Condition="'$(ImportVSSDKTargets)'=='true'" />
+
+
+</Project>
