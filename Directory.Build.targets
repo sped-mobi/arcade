@@ -6,11 +6,9 @@
 
   <ItemGroup>
     <PackageReference Remove="XliffTasks" />
-
-    <PackageReference Condition="'$(SkipImportVSSdkNuGetPackage)'!='true'" Include="Microsoft.VisualStudio.SDK" Version="16.0.200" />
   </ItemGroup>
 
-  <Import Project="VisualStudio.targets" Condition="'$(ImportVSSDKTargets)'=='true'" />
+  <Import Project="eng\VisualStudio.targets" Condition="'$(ImportVSSDKTargets)'=='true'" />
 
 
 </Project>
