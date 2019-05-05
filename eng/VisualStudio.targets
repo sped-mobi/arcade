@@ -1,6 +1,9 @@
 <Project>
 
-
+<ItemGroup>
+  <PackageReference Condition="'$(SkipImportVSSdkNuGetPackage)' != 'true'" Include="Microsoft.VisualStudio.SDK" Version="16.0.200" />  
+</ItemGroup>
+  
 <Choose>
   <When Condition="'$(IsVSPackageProject)' == 'true'">
     <PropertyGroup>
