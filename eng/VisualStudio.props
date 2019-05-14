@@ -1,18 +1,23 @@
 <Project>
 
   <PropertyGroup>
-
-    <CopyVsixManifestToOutput>false</CopyVsixManifestToOutput>
+    <!--<UseCommonOutputDirectory Condition="'$(DeployExtension)'=='false'">true</UseCommonOutputDirectory>-->
     
-    <!--<UseCommonOutputDirectory Condition="'$(UseCommonOutputDirectory)' == ''">true</UseCommonOutputDirectory>-->
-    <VSSDKTargetPlatformRegRootSuffix Condition="'$(RootSuffix)' != ''">$(RootSuffix)</VSSDKTargetPlatformRegRootSuffix>
-    <VSSDKTargetPlatformRegRootSuffix Condition="'$(VSSDKTargetPlatformRegRootSuffix)' == ''">Exp</VSSDKTargetPlatformRegRootSuffix>
-    
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <ForceGenerationOfBindingRedirects>true</ForceGenerationOfBindingRedirects>
+    <SourceExtensionVsixManifestPath>$(MSBuildProjectDirectory)\source.extension.vsixmanifest</SourceExtensionVsixManifestPath>
 
-    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
 
+    <IsVsixProject>false</IsVsixProject>
+    <IsVsixProject Condition="Exists('$(SourceExtensionVsixManifestPath)')">true</IsVsixProject>
+
+    <IsVsPackageProject>false</IsVsPackageProject>
+    <IsVsPackageProject Condition="'$(GeneratePkgDefFile)'=='true'">true</IsVsPackageProject>
+
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <VsixLoggerVersion>1.1.44</VsixLoggerVersion>
+    <MicrosoftVisualStudioSDKVersion>16.0.200</MicrosoftVisualStudioSDKVersion>
+    <MicrosoftVSSDKBuildToolsVersion>16.1.2094</MicrosoftVSSDKBuildToolsVersion>
   </PropertyGroup>
 
 
