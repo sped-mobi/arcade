@@ -8,7 +8,7 @@
     <PackageReference Remove="XliffTasks" />
   </ItemGroup>
 
-  <Import Project="eng\VisualStudio.targets" Condition="'$(ImportVSSDKTargets)'=='true'" />
+  <Import Project="eng\VisualStudio.targets" Condition="'$(UsingToolVsSDK)'=='true'" />
 
 
 </Project>
