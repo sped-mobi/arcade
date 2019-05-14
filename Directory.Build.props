@@ -40,7 +40,7 @@
     
   </PropertyGroup>
 
-  <Import Project="eng\VisualStudio.props" Condition="'$(ImportVSSDKTargets)'=='true'" />
+  <Import Project="eng\VisualStudio.props" Condition="'$(UsingToolVsSDK)'=='true'" />
 
 
 </Project>
