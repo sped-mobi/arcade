@@ -2,6 +2,7 @@
   <PropertyGroup>
     <DotNetBuildFromSource>true</DotNetBuildFromSource>
     <DotNetFinalVersionKind>release</DotNetFinalVersionKind>
+    <DisableArcadeTestFramework>true</DisableArcadeTestFramework>
     <UsingToolXliff Condition="'$(UsingToolXliff)'==''">false</UsingToolXliff>
     <UsingToolVsSDK Condition="'$(UsingToolVsSDK)'==''">false</UsingToolVsSDK>
     <UsingToolNetFrameworkReferenceAssemblies Condition="'$(MSBuildRuntimeType)'=='Core'">true</UsingToolNetFrameworkReferenceAssemblies>
