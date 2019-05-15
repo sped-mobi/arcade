@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{{buildGu
 		appveyor.yml = appveyor.yml
 		Directory.Build.props = Directory.Build.props
 		Directory.Build.targets = Directory.Build.targets
+		eng\VisualStudio.props = eng\VisualStudio.props
+		eng\VisualStudio.targets = eng\VisualStudio.targets
 		global.json = global.json
 		NuGet.config = NuGet.config
 		README.md = README.md
@@ -18,7 +20,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{{buildGu
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{{toolsGuid}}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArcadeRepo", "src\ArcadeRepo\ArcadeRepo.csproj", "{{arcadeRepoGuid}}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "{{name}}", "src\{{name}}\{{name}}.csproj", "{{arcadeRepoGuid}}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{{codeGeneratorGuid}} = {{toolsGuid}}
+		{{toolsGuid}} = {{codeGeneratorGuid}}
 	EndGlobalSection
 EndGlobal
