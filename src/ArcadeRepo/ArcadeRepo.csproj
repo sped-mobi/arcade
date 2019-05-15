@@ -5,6 +5,7 @@
     <Description>{{description}}</Description>
     <PackageDescription>$(Description)</PackageDescription>
     <PackageReleaseNotes>$(PackageDescription)</PackageReleaseNotes>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <Sdk Name="Microsoft.NET.Sdk" />
