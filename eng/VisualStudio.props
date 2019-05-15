@@ -1,11 +1,38 @@
 <Project>
+  
+ <!--
+  
+  *** NOTE: Stick the proper PropertyGroup below before the first Sdk element or Import element in a project file ***
+  
+  === VSIX Project ===
+  
+  <PropertyGroup>
+    <UsingToolVsSDK>true</UsingToolVsSDK>
+    <DeployExtension>false</DeployExtension>
+    <GeneratePkgDefFile>false</GeneratePkgDefFile>
+    <CreateVsixContainer>true</CreateVsixContainer>
+    <TargetVsixContainerName>SomeNameHere.vsix</TargetVsixContainerName>
+  </PropertyGroup>
+  
+  
+  === VSPackage Project ===
+  
+  <PropertyGroup>
+    <UseCodebase>true</UseCodebase>
+    <UsingToolVsSDK>true</UsingToolVsSDK>   
+    <DeployExtension>false</DeployExtension>
+    <GeneratePkgDefFile>true</GeneratePkgDefFile>
+    <CreateVsixContainer>false</CreateVsixContainer>
+    <CopyVsixManifestToOutput>false</CopyVsixManifestToOutput>
+  </PropertyGroup>
+  
+  -->
 
   <PropertyGroup>
     <!--<UseCommonOutputDirectory Condition="'$(DeployExtension)'=='false'">true</UseCommonOutputDirectory>-->
     
     <SourceExtensionVsixManifestPath>$(MSBuildProjectDirectory)\source.extension.vsixmanifest</SourceExtensionVsixManifestPath>
-
-
+    
     <IsVsixProject>false</IsVsixProject>
     <IsVsixProject Condition="Exists('$(SourceExtensionVsixManifestPath)')">true</IsVsixProject>
 
@@ -17,7 +44,7 @@
   <PropertyGroup>
     <VsixLoggerVersion>1.1.44</VsixLoggerVersion>
     <MicrosoftVisualStudioSDKVersion>16.0.200</MicrosoftVisualStudioSDKVersion>
-    <MicrosoftVSSDKBuildToolsVersion>16.1.2094</MicrosoftVSSDKBuildToolsVersion>
+    <MicrosoftVSSDKBuildToolsVersion>16.2.1033-develop-geb07a8be</MicrosoftVSSDKBuildToolsVersion>
   </PropertyGroup>
 
 
