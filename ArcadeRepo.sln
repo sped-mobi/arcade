@@ -18,9 +18,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{{buildGu
 		eng\Versions.props = eng\Versions.props
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{{toolsGuid}}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "{{name}}", "src\{{name}}\{{name}}.csproj", "{{arcadeRepoGuid}}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{{toolsGuid}}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +39,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{{toolsGuid}} = {{codeGeneratorGuid}}
+		{{codeGeneratorGuid}} = {{toolsGuid}}
 	EndGlobalSection
 EndGlobal
