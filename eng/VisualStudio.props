@@ -41,7 +41,7 @@
   <Choose>
     <When Condition="'$(ImportVsSDKRules)'=='true'">
       <ItemGroup>
-        <PropertyPageSchema Include="$(RulesDirectory)VsixProject.BrowseObject.xaml">
+        <PropertyPageSchema Include="VsixProject.BrowseObject.xaml">
           <Context>Project;BrowseObject</Context>
         </PropertyPageSchema>
       </ItemGroup>
