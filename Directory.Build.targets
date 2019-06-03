@@ -8,8 +8,8 @@
 
   <Import Project="eng\VisualStudio.targets" Condition="'$(UsingToolVsSDK)'=='true'" />
   
-  <ItemGroup>
-    <Comile Include="JetBrainsAnnotations.cs" Link="$(JetBrainsAnnoationsPath)" Condition="'$(UseJetBrainsAnnotations)'=='true'" />
+  <ItemGroup Condition="'$(UseJetBrainsAnnotations)'=='true'">
+    <Compile Include="$(JetBrainsAnnoationsPath)" Link="JetBrainsAnnotations.cs" />
   </ItemGroup>
 
 </Project>
