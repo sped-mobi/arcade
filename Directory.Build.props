@@ -1,4 +1,4 @@
-<Project>
+﻿<Project>
   <PropertyGroup>
     <DotNetBuildFromSource>true</DotNetBuildFromSource>
     <DotNetFinalVersionKind>release</DotNetFinalVersionKind>
@@ -21,7 +21,7 @@
   <PropertyGroup>
     <GitHubOrganization>sped-mobi</GitHubOrganization>
     <GitHubRepositoryBranch>master</GitHubRepositoryBranch>
-    <GitHubRepositoryName>{{repositoryName}}</GitHubRepositoryName>
+    <GitHubRepositoryName>openapi-codegen</GitHubRepositoryName>
     <GitHubBaseRepositoryUrl>https://github.com/$(GitHubOrganization)/$(GitHubRepositoryName)</GitHubBaseRepositoryUrl>
     <GitHubRepositoryUrl>$(GitHubBaseRepositoryUrl).git</GitHubRepositoryUrl>
     <GitHubPackageProjectUrl>$(GitHubBaseRepositoryUrl)/tree/$(GitHubRepositoryBranch)</GitHubPackageProjectUrl>
@@ -44,9 +44,14 @@
     <PackageProjectUrl>$(GitHubPackageProjectUrl)</PackageProjectUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>  
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    
     <DebugType>full</DebugType>
     <DebugSymbols>true</DebugSymbols>
     <LangVersion>latest</LangVersion>
+    
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
+
+  <Import Project="eng\VisualStudio.props" Condition="'$(UsingToolVsSDK)'=='true'" />
 </Project>
