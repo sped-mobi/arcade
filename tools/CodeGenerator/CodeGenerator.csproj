@@ -8,14 +8,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>{{targetFramework}}</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
-
-
-
-  <ItemGroup>
-    <PackageReference Include="System.CodeDom" Version="4.5.0" />
-  </ItemGroup>
-
 
 </Project>
