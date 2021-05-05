@@ -1,18 +1,14 @@
 ﻿<Project>
 
   <PropertyGroup>
-    <IsPackable>true</IsPackable>
-    <Description>{{description}}</Description>
-    <PackageDescription>$(Description)</PackageDescription>
-    <PackageReleaseNotes>$(PackageDescription)</PackageReleaseNotes>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <Sdk Name="Microsoft.NET.Sdk" />
 
   <PropertyGroup> 
     <RootNamespace>{{defaultNamespace}}</RootNamespace>
-    <TargetFramework>{{targetFramework}}</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
 
