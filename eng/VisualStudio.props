@@ -17,8 +17,9 @@
 
   <PropertyGroup>
     <SystemIOCompressionZipFileVersion>4.3.0</SystemIOCompressionZipFileVersion>
-    <MicrosoftVisualStudioSDKVersion>16.0.200</MicrosoftVisualStudioSDKVersion>
-    <MicrosoftVSSDKBuildToolsVersion>16.2.1033-develop-geb07a8be</MicrosoftVSSDKBuildToolsVersion>
+    <MicrosoftVisualStudioSDKVersion>16.9.31025.194</MicrosoftVisualStudioSDKVersion>
+    <MicrosoftVSSDKBuildToolsVersion>16.9.1050</MicrosoftVSSDKBuildToolsVersion>
+    <MicrosoftVisualStudioThreadingVersion>16.9.60</MicrosoftVisualStudioThreadingVersion>
   </PropertyGroup>
   
   
